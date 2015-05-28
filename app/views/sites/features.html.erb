@@ -1,0 +1,154 @@
+<div id="feature-image">
+  <div class="container">
+    <div class="text">
+      <h2>Beneficios para su negocio </h2>
+
+      <p>Con TeHablo usted siempre sera el primer punto de enfoque.</p>
+    </div>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / services -->
+
+<div class="features-list">
+  <div class="container">
+    <section>
+      <article>
+        <div class="ico"><img src="/images/ico_f_1.png" alt=""></div>
+        <h3>Tus servicios, tu identidad, <br/>tu empresa</h3>
+
+        <p>Cuando tu negocio utilice TeHablo usted tiene el control de los servicios ofrecidos. Sus clientes
+          nunca veran el logo de TeHablo. Esto le permite crear su propia identidad sin intervension de
+          nosotros.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_f_2.png" alt=""></div>
+        <h3>Su negocio necesita ganancias, no revender</h3>
+
+        <p>Nuestro sistema le ofrece la major ganancia posible por cada servicio, aumentando asi su margen de
+          ingresos para su negoocio.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_f_3.png" alt=""></div>
+        <h3>Una plataforma para su empresa</h3>
+
+        <p>TeHablo es una plataforma creada especificamente para aumentar los ingresos de su negocio ofreciendo
+          servicios alternativos de comunicación. Con TeHablo usted tiene la libertad de manejar sus clientes,
+          servicios ofrecidos como toda una empresa ya establecida.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_f_4.png" alt=""></div>
+        <h3>Servicios de comunicaciónes innovadores</h3>
+
+        <p>Enlazamos tus puntos de comunicación; sin barreras para que tus clientes puedan comunicarse con sus
+          seres queridos, amigos o empresarios donde quiera que se encuentrn, esa es nuestra visión, hacer que
+          cada día puedas hablar sin pensar en la distancia ni
+          el tiempo, ni en el costo.</p>
+      </article>
+    </section>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / features-list -->
+
+<div class="mistakes blue">
+  <div class="container">
+    <h2>Ganar dinero es más fácil - Tu negocio crece ofreciendo nuestros servicios!</h2>
+
+    <p>El promedio de ingresos generado para nuestros agentes es de <strong> $200 US / mensual con solo 8
+      clientes</strong>.
+      Con te hablo sus ingresos son ilimitados. Nuestro servicio le ofrece obtener un ingreso constante y sin
+      limites.
+    </p>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / mistakes -->
+
+<div class="dreams-list">
+  <div class="container">
+    <section>
+      <article>
+        <div class="ico"><img src="/images/ico_fb_1.png" alt=""></div>
+        <h3>TeHablo</h3>
+
+        <p>Le permite realizar llamadas internacionales a precios bien bajos, sin nececidad de tarjeta de
+          llamadas y sin marcado de codigos o PIN.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_fb_2.png" alt=""></div>
+
+        <h3>Sigueme / FollowMe</h3>
+
+        <p>Le permite a sus familiares, amigos y companeros de negocio comunicarse con usted realizando una
+          llamada local en su pais.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_fb_3.png" alt=""></div>
+        <h3>Recargas Moviles</h3>
+
+        <p><strong>Dale libertad a tus seres queridos!</strong> Con nuestro servicio de recargas usted puede
+          recargar el servicio prepagado de sus seres queridos en el extranjero.</p>
+      </article>
+      <article>
+        <div class="ico"><img src="/images/ico_fb_4.png" alt=""></div>
+        <h3>Centro De Llamadas</h3>
+
+        <p><strong>Tiene en su negocio espacio que no genera ingresos?</strong> Entonces, ofrece llamadas
+          internacionales en su negocio, sin necesidad de equipos o servicio de internet.</p>
+      </article>
+    </section>
+    <div class="phone"><img src="../images/2-iphones.png" width="350" alt=""></div>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / dreams-list -->
+
+<div class="mistakes">
+  <div class="container">
+    <h2>Sus clientes siempre seran sus clientes</h2>
+
+    <p>Cada vez que usted subscribe un cliente ese cliente siempre le pertenecera a su negocio no importa donde,
+      como o cuando.
+      Asimismo cada vez que su cliente recarge su cuenta, usted siempre obtendra ingresos por ese cliente.</p>
+
+  </div>
+  <!-- / container -->
+</div>
+<!-- / mistakes -->
+
+<div class="quote-box blue">
+  <div class="container">
+    <div class="image">
+      <h style="font-size: 46px; font-weight: 300; line-height: 1.2em">Depositos automaticos <br>en su <strong>cuenta corriente</strong></h1>
+    </div>
+
+    <blockquote style="width:400px">
+      <p>TeHablo te ofrece la comodidad de recibir todos tus ingresos en tu cuenta bancaria automaticamente.
+      </p>
+
+      <p><strong>Para activar Deposito Automaticos solo tiene que tener una Cuenta Corriente de cualquier banco
+        en Estados Unidos.</strong></p>
+    </blockquote>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / quote -->
+
+<div class="signup-box">
+  <div class="container">
+    <h2>Crea tu cuenta ahora y empiece a ganar dinero!</h2>
+
+    <p></p>
+
+    <%= form_tag(register_path, class: "form-vertical") do %>
+        <%= text_field_tag :email, params[:email], placeholder: "Email", class: "email", id: "email" %>
+        <%= text_field_tag :password, params[:password], placeholder: "Clave de Seguridad", class: "pass", id: "password" %>
+        <%= text_field_tag :password_confirmation, params[:password_confirmation], placeholder: "Confirmar Clave", class: "pass", id: "password" %>
+
+        <input type="submit" class="btn btn-green" value="Sign Up">
+    <% end %>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / signup-box -->

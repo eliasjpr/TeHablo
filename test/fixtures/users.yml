@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  logo: MyString
+  business_name: 
+  balance: 1.5
+  commission: 1.5
+  account_status: false
+  sid: MyString
+  auth_token: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  password: MyString
+  logo: MyString
+  business_name: 
+  balance: 1.5
+  commission: 1.5
+  account_status: false
+  sid: MyString
+  auth_token: MyString

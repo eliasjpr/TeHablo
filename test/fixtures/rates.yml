@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  direction: MyString
+  country: MyString
+  country_code: MyString
+  country_iso: MyString
+  prefix: 1
+  voice_rate: 9.99
+  unit_in_seconds: MyString
+  number_type: MyString
+  rent_per_number: 9.99
+  setup_cost_per_number: 9.99
+
+two:
+  direction: MyString
+  country: MyString
+  country_code: MyString
+  country_iso: MyString
+  prefix: 1
+  voice_rate: 9.99
+  unit_in_seconds: MyString
+  number_type: MyString
+  rent_per_number: 9.99
+  setup_cost_per_number: 9.99

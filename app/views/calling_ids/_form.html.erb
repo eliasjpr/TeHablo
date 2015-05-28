@@ -1,0 +1,42 @@
+<% unless request.xhr? %>
+    <div class="well well-small">
+      <h3><%= t('callingids.titles.form') %></h3>
+    <hr>
+<% end %>
+<%= form_for @calling_id, :html => {:class => 'form-horizontal', style: "margin:0"} do |f| %>
+    <% if request.xhr? %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3><%= t('callingids.titles.form') %></h3>
+        </div>
+
+    <% end %>
+    <div class="modal-body">
+      <% if @calling_id.user.nil? %>
+          <div class="control-group">
+            <%= f.label :user_id,t('callingids.fields.customer'), :class => 'control-label' %>
+            <div class="controls">
+              <%= f.collection_select :user_id, current_user.customers, :id, :full_name, class: 'text_field' %>
+            </div>
+          </div>
+      <% else %>
+          <%= f.hidden_field :user_id %>
+      <% end %>
+      <div class="control-group">
+        <%= f.label t('callingids.fields.callingid'), :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :call_id, :class => 'text_field' %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit t('callingids.btn.add_callingid'), :class => 'btn btn-primary' %>
+      <% unless request.xhr? %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  calling_ids_path, :class => 'btn' %>
+      <% end %>
+    </div>
+<% end %>
+<% unless request.xhr? %>
+    </div>
+<% end %>

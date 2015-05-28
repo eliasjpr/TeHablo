@@ -1,0 +1,55 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= t 'recharges.fields.user' %></th>
+    <th><%= t 'recharges.fields.last4' %></th>
+    <th><%= t 'recharges.fields.card_type' %></th>
+    <th><%= t 'recharges.fields.amount' %></th>
+    <th><%= t 'recharges.fields.currency' %></th>
+    <% if current_user.is_super_agent? %>
+        <th><%= t 'recharges.fields.amount_refunded' %></th>
+        <th><%= t 'recharges.fields.refunded' %></th>
+        <th><%= t 'recharges.fields.fee' %></th>
+        <th><%= t 'recharges.fields.dispute' %></th>
+        <th><%= t 'recharges.fields.captured' %></th>
+        <th><%= t 'recharges.fields.paid' %></th>
+
+    <th><%= t 'shared.created_at' %></th>
+    <th><%= t("helpers.actions") %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% recharges.each do |recharge| %>
+      <tr>
+        <td><%= link_to recharge.user.full_name, recharge_path(recharge) %></td>
+        <td><%= recharge.last4 %></td>
+        <td><%= recharge.card_type %></td>
+        <td><%= number_to_currency(recharge.amount, {unit: '$', precision: 2}) %></td>
+        <td><%= recharge.currency.upcase %></td>
+        <td><%= l recharge.created_at, format: :short %></td>
+        <% if current_user.is_super_agent? %>
+            <td><%= number_to_currency(recharge.refunded, {unit: '$', precision: 2}) %></td>
+            <td><%= number_to_currency(recharge.fee, {unit: '$', precision: 2}) %></td>
+            <td><%= number_to_currency(recharge.amount_refunded, {unit: '$', precision: 2}) %></td>
+            <td><%= recharge.dispute %></td>
+            <td><%= recharge.captured ? "Yes" : "No" %></td>
+            <td><%= recharge.paid ? "Yes" : "No" %></td>
+            <td>
+              <div class="btn-group">
+                <%= link_to edit_recharge_path(recharge), :class => 'btn btn-mini' do %>
+                    <i class="icon-edit"></i> <%= t 'helpers.titles.edit' %>
+                <% end %>
+                <%= link_to recharge_path(recharge),
+                            :method => :delete,
+                            :data => {:confirm => t("helpers.links.confirm")},
+                            :class => 'btn btn-mini btn-danger' do %>
+                    <i class="icon-remove"></i> <%= t 'helpers.titles.delete' %>
+                <% end %>
+              </div>
+            </td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

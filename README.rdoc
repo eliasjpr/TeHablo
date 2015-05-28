@@ -1,0 +1,48 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+ 2.0.0
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+  - Need to create a job queue for money transfer
+
+* Deployment instructions
+
+* Completed
+    # Done add money transfer fees to user account screen
+    # Done add bank account form
+    # Done add credit card form
+    # Done add rates table
+    # Done calculate outgoing time limit call based on Balance and Rate
+    # Done create transfer report screen
+    # Done raise error when subaccount is not created on plivo
+    # Done send email/text notification to agent and user
+    # Done Print customer receipt for
+    # Done translate website
+    # Done fix when click cancel on adding phone number
+    # Done forgot password email
+    # Done Welcome email content
+* Todo
+    # Todo get sip mobile apps
+    # Todo limit user access
+    # Todo allow users to buy phone?
+    # Todo allow agents to top up (Contact moremagick +1 (617) 244 1598 )
+
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

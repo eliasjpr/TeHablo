@@ -1,0 +1,32 @@
+<div class="row-fluid">
+  <div class="span6">
+
+    <%= form_for @receipt, :html => {:class => 'form-horizontal well well-small'} do |f| %>
+        <legend><%= t("receipts.titles.form") %></legend>
+        <%= bootstrap_flash %>
+        <%= render "layouts/error", errors: @receipt.errors %>
+        <div class="control-group">
+          <%= f.label :user_id, t('receipts.fields.customer'), :class => 'control-label' %>
+          <div class="controls">
+            <%= f.collection_select :user_id, current_user.customers, :id, :full_name, class: 'text_field' %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :amount,t('receipts.fields.amount'), :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :amount, :class => 'text_field' %>
+          </div>
+        </div>
+
+
+        <div class="form-actions">
+          <%= f.submit t('receipts.btn.recharge_customer'), :class => 'btn btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                      receipts_path, :class => 'btn' %>
+        </div>
+    <% end %>
+  </div>
+  <div class="span6">
+    <%= render 'dashboard/account_balance' %>
+  </div>
+</div>

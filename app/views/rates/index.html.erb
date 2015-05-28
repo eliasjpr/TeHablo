@@ -1,0 +1,53 @@
+
+<div class="page-header">
+  <h1>
+    <%= t 'rates.titles.list' %>
+    <span class="pull-right">
+      <%= link_to new_rate_path, :class => 'btn btn-success' do %> <i class="icon-plus"></i> <%= t('rates.btn.add_new') %> <% end %>
+    </span>
+  </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= t('rates.fields.direction') %></th>
+    <th><%= t('rates.fields.country')%></th>
+    <th><%= t('rates.fields.country_code') %></th>
+    <th><%= t('rates.fields.country_iso') %></th>
+    <th><%= t('rates.fields.prefix') %></th>
+    <th><%= t('rates.fields.voice_rate') %></th>
+    <th><%= t('rates.fields.unit_in_seconds') %></th>
+    <th><%= t('rates.fields.number_type') %></th>
+    <th><%= t('rates.fields.rent_per_number') %></th>
+    <th><%= t('rates.fields.setup_cost_per_number') %></th>
+    <th><%= t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @rates.each do |rate| %>
+      <tr>
+        <td><%= link_to rate.direction.capitalize, rate_path(rate) %></td>
+        <td><%= rate.country %></td>
+        <td><%= rate.country_code %></td>
+        <td><%= rate.country_iso %></td>
+        <td><%= rate.prefix %></td>
+        <td><%= number_to_currency(rate.voice_rate, {unit: '$', precision: 2}) %></td>
+        <td><%= rate.unit_in_seconds %></td>
+        <td><%= rate.number_type %></td>
+        <td><%= number_to_currency(rate.rent_per_number, {unit: '$', precision: 2}) %></td>
+        <td><%= number_to_currency(rate.setup_cost_per_number, {unit: '$', precision: 2}) %></td>
+        <td>
+         <div class="btn-group">
+          <%= link_to edit_rate_path(rate), :class => 'btn btn-mini' do %> <i class="icon-edit"></i> Edit <% end %>
+          <%= link_to rate_path(rate),
+                      :method => :delete,
+                      :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+                      :class => 'btn btn-mini btn-danger' do %> <i class="icon-remove"></i> Delete <% end %>
+         </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

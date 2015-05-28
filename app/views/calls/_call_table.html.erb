@@ -1,0 +1,44 @@
+<table class="table table-striped" id="CompletedCalls">
+  <thead>
+  <tr>
+    <th class="blue header"><%= t('calls.fields.call_direction') %></th>
+    <th class="blue header"><%= t('calls.fields.call_status') %></th>
+    <th class="blue header"><%= t('calls.fields.from_number') %></th>
+    <th class="blue header"><%= t('calls.fields.to_number') %></th>
+    <th class="blue header"><%= t('calls.fields.billed_duration') %></th>
+    <th class="blue header"><%= t('calls.fields.total_rate') %></th>
+    <th class="blue header"><%= t('calls.fields.print_receipt') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% calls.each do |call| %>
+      <tr>
+        <td>
+          <%= call.call_direction.capitalize %>
+        </td>
+        <td>
+          Completed
+        </td>
+        <td><%= number_to_phone call.from_number %></td>
+        <td><%= number_to_phone call.to_number %></td>
+
+        <% if Call::ACTIVE_CALL_STATUS.include?(call.call_status) and not call["session_start"].nil? %>
+            <td>
+              <div class="since_call_started" datetime="<%= call["session_start"] %>"><%= call["session_start"] %></div>
+            </td>
+        <% else %>
+            <td><%= Time.at(call.billed_duration.to_i).utc.strftime("%H:%M:%S") %></td>
+        <% end %>
+
+
+        <td><%= number_to_currency(call.get_call_cost, {unit: '$', precision: 2}) %></td>
+        <td>
+          <%= link_to print_call_path(call.id), class: "btn btn-small", title: "Print Receipt" do %>
+              <i class="icon-print"></i>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>

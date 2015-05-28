@@ -1,0 +1,68 @@
+<%= form_for @rate, :html => {:class => 'form-horizontal'} do |f| %>
+    <div class="control-group">
+      <%= f.label :direction,t('rates.fields.direction'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :direction, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :country, t('rates.fields.country'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :country, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :country_code, t('rates.fields.country_code'),  :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :country_code, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :country_iso, t('rates.fields.country_iso'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :country_iso, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :prefix, t('rates.fields.prefix'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :prefix, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :voice_rate, t('rates.fields.voice_rate'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :voice_rate, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :unit_in_seconds, t('rates.fields.unit_in_seconds'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :unit_in_seconds, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :number_type, t('rates.fields.number_type'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :number_type, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :rent_per_number, t('rates.fields.rent_per_number'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :rent_per_number,  :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :setup_cost_per_number, t('rates.fields.setup_cost_per_number'), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :setup_cost_per_number, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  rates_path, :class => 'btn' %>
+    </div>
+<% end %>

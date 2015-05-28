@@ -1,0 +1,269 @@
+es:
+  time:
+    formats:
+      short: "%m/%d/%y %I:%M %P"
+  shared:
+    created_at: "Creado"
+    actions:  "Acciones"
+    confirm: "Estas seguro?"
+    updated_at: "Actualizado"
+  btn:
+    quick_recharge: "Recargar Cliente"
+    recharge_account: "Recargar Mi Cuenta"
+    edit: "Edita"
+    delete: "Borrar"
+    add_customer: "Crear Nuevo Cliente "
+    view_rates: "Ver Tarifas De Llamadas"
+    recharge_customer: "Recharge Customer"
+    add_new_phone_number: "Agregar Nuevo Telefono"
+    buy_number: "Comprar Numero Telefonico"
+    enable_money_transfer: "Abilitar Depositos Automaticos"
+  dashboard:
+    title: "Panel Principal"
+    active_calls: "Llamadas Activas"
+    todays_calls: "Llamadas Realizadas Hoy"
+    quick_recharge: "Recarga Rapida Cliente"
+    account_balance:  "Balance de Cuenta"
+    total_sales:  "Ventas Totales"
+    total_revenue:  "Ingresos Totales"
+    commission_rate:  "Comission"
+    account_balance: "Balance de Cuenta"
+  users:
+    title:
+      add_new: "Agregar Nuevo Cliente"
+      edit_new: "Editar Cliente"
+      personal_info: " Informacion Personal"
+      business_information: "Informacion de Negocio"
+      money_transfer: "Depositos automático"
+      my_services: "Mis Servicios"
+      call_history: "Historial de Llamadas"
+      recharge_history: "Historial de Recargas"
+      title: "Clientes"
+      show: "Perfil"
+    text:
+      money_transfer_html: "<strong>Usted tiene depositos de dinero automático activado.</strong> Woohoo! <br/>
+      Cada transferencia cuesta 50 ¢ y transferencias fallidas costo adicional de $ 1.5. <br/>"
+      money_transfer_alt_html: "<strong>Usted tiene deposito de dinero automático desactivado.</strong> <br/>
+                                        Depositamos sus ganacias de cada día en su cuenta corriente autmaticamente.
+                                       Cada transferencia cuesta 50 ¢ y transferencias fallidas costo adicional de $ 1.5. <br/>
+                                       (Esta función sólo está disponible en los EE.UU. en este momento.)</p>"
+    name: "Nombre Completo"
+    first_name: "Nombre"
+    last_name: "Apellido"
+    account_access: "Accesso a cuenta"
+    password: "clave de seguridad"
+    password_confirmation: "confirmar clave de seguridad"
+    logo: "Logo"
+    email: "Correo Electronico"
+    balance: "Balance"
+    roles: "Roles"
+    business_name: "Nombre del Negocio"
+    commission: "Comisión"
+    account_status: "Estado de Cuenta"
+    sid: "Cuenta SID"
+    auth_token: "Cuenta Token"
+    bank:
+      name: "Nombre del banco"
+      routing: "Número de ruta"
+      account: "Cuenta Bancaria"
+      tax_id: "Impuestos EIN"
+    tabs:
+      my_services:
+        follow_me: "Sigueme"
+        follow_me_text_html: "Obtenga un número de teléfono en un país extranjero que suena a cualquier número en los
+                              EE.UU.. Por $ 10.00/mes recibir llamadas ilimitadas a cualquier teléfono en los EE.UU.."
+        follow_me_numbers: "Numeros Sigueme"
+        te_hablo: "TeHablo"
+        te_hablo_text_html: "Realice llamadas internacionales a muy bajo costo a cualquier parte del mundo."
+        te_hablo_numbers: "Números relacionados"
+        smartphone: "Aplicacion"
+        smartphone_text_html: "<ul><li>Instale Zoiper en tu iPhone o dispositivo Android</li><li>Abra la applicacion Zoiper</li><li>Escanear el código QR ​​a continuación</li></ul>"
+  recharges:
+    titles:
+      title: "Recargue"
+      recharge: "Recargar Mi Cuenta"
+      recharges: "Recargas"
+      new: "Información de Tarjeta de Crédito"
+      form: "Recargar Cuenta"
+    fields:
+      card_name: "Nombre en la tarjeta"
+      amount: "Monto de Recarga"
+      number: "Número de Tarjeta de Crédito"
+      cvc: "Código CVC"
+      exp_month: "YY"
+      exp_year: "MM"
+      user: "Cliente"
+      last4: "Últimos 4 dígitos"
+      card_type: "Tipo de tarjeta"
+      paid: "Pagado"
+      currency: "Moneda"
+      captured: "Capturado"
+      amount_refunded: "Monto de reembolso"
+      refunded: "Reembolso"
+      fee: "Honorarios"
+      dispute: "Protesta"
+      failure_message: "Mensaje de error"
+      failure_code: "Código de error"
+      agent: "Agencia"
+      invoice: "Factura"
+      description: "Descripción"
+      btn:
+        recharge: "Recargar"
+        recharging: "Recargando..."
+  receipts:
+    titles:
+      new:  "Recargar cliente"
+      edit: "Recargar cliente"
+      show: "Factura"
+      list: "Facturas"
+      form: "Recargar de cuenta del cliente"
+    fields:
+      customer: "Cliente"
+      agent: "Agencia"
+      amount: "Cantidad"
+      revenue: "Ingresos"
+      rate: "Tasa"
+      ip: "Direccion IP"
+      transfer_status: "Estado de la transferencia"
+      date: "Fecha"
+    btn:
+      recharge_customer: "Recargar cliente"
+  rates:
+    titles:
+      new:  "Crear Nueva Tarifas Internacional"
+      edit: "Edición Internacional de Tarifas"
+      show: "Precio Internacional"
+      list: "Tarifas de llamadas internacionales"
+      form: "Recargar de cuenta del cliente"
+      voice_rate: "Tarifas de voz"
+      country_info: "Información del País"
+      check_rates: "Ver Tarifas Internacionales"
+      search_rates: "Buscar Tarifas"
+      rate_per_minute: "Tarifas por minuto"
+      number_rent: "Sigueme Renta de Number"
+    text:
+      call: "Llamar hacia"
+    fields:
+      direction: "Dirección"
+      country: "Country"
+      country_code: "País código"
+      country_iso: "País código Alt"
+      prefix: "Prefijo"
+      voice_rate: "Tarifa de Voz"
+      unit_in_seconds: "Unidad en segundos"
+      number_type: "Tipo de numero"
+      rent_per_number: "Rents Por Numero"
+      setup_cost_per_number: "Costo de confirguracion"
+      call_from: "Llamando desde"
+      call_to: "hacia "
+      rent_unit: "mes"
+    btn:
+      save_rate: "Recargar cliente"
+      add_new: "Crear nueva tarifa de llamada"
+      search: "Buscar"
+  calls:
+    titles:
+      new:  "Añadir nueva llamada"
+      edit: "Editar llamada"
+      show: "Detalles de Llamada"
+      list: "Llamadas"
+      form: "Recargar de cuenta del cliente"
+      billing_info: "Información de facturación"
+      user_information: "Información del usuario"
+    fields:
+      call_duration: "Duración de la llamada"
+      total_amount:  "Monto total"
+      parent_call_uuid: "Llamada Original UUID"
+      call_uuid:  "Llamada SID"
+      call_direction: "Dirección"
+      to_number: "Hacia"
+      total_rate: "Costo total"
+      from_number: "Desde"
+      end_time: "Tiempo de finalización"
+      resource_uri: "Recurso URI"
+      call_status:  "Estado de la llamada"
+      user:    "Cliente"
+      bill_duration: "Cargo por Duration"
+      billed_duration: "Monto por Duration"
+      api:   "API ID"
+      agent: "Agencia"
+      print_receipt: "Imprimir Recibo"
+      date: "Fecha"
+      invoice: "Factura"
+      thank_you: "Gracias por su pago"
+    btn:
+      recharge_customer: "Recargar cliente"
+  services:
+    titles:
+      title: "Ahorre en grande con nuestros servicios de llamadas internacionales"
+      tehablo: "Llamadas internacionales"
+      followme: "Sigueme"
+      access_numbers: "Números de Acceso"
+    text:
+      tehablo_html: "Realiza llamadas internacionales a precios bien bajos, sin nececidad de tarjeta de llamadas y sin marcado de codigos o PIN.<ol><li>Llame directo desde cualquier telefono</li><li>Sin Contrato</li><li>Sin Marcar Pin</li></ol>"
+      followme_html: "Le permite a sus familiares, amigos y companeros de negocio comunicarse con usted realizando una llamada local en su pais.<ol><li>Eliga su numero telefonico</li><li>Disponible en mas 20 paises</li><li>Llamadas Ilimitadas</li></ol>"
+      to_make_call: "Para realizar una llamada, por favor marque uno de los numeros de acceso debajo."
+      access_numbers_html: "<ul><li>1 (201) 623-3387</li><li>1 (914) 249-9042</li><li>1 (203) 614-1208</li></ul>"
+  callingids:
+    titles:
+      new:  "Relacionar nuevo teléfono "
+      edit: "Editar teléfono vinculado"
+      show: "Teléfonos"
+      list: "Teléfonos relacionados"
+      form: "Relacionar Número de Teléfono"
+    fields:
+      customer: "Cliente"
+      callingid: "Número de teléfono"
+    btn:
+      add_callingid: "Agregar número de teléfono"
+  menu:
+    dashboard: "Panel De Control"
+    customers:
+      mycustomers: "Mis Clientes"
+      all:     "Todos Mis Clientes"
+      add:     "Agregar Cliente Nuevo"
+      recharge: "Recargar Cliente"
+      receipts: "Recibo De Pago Clientes"
+    reports:
+      myreports: "Reportes"
+      recharges: "Recargas A Mi Cuenta"
+      calls:     "Mi Record De Llamadas"
+    settings:
+      mysettings: "Configuración"
+      callids:   "Administrar de Llamadas"
+      rates:     "Administrar de Tarifas "
+    rates:       "Tarifas"
+    billpayment: "Centro De Pagos"
+    topup:       "Recarga de móvil"
+    account:
+          myaccount: "Mi Cuenta"
+          recharge_account: "Recargar Mi cuenta"
+          logout: "Salir"
+  email:
+      welcome_html: " <h4>Estamos encantados de contar con usted como nuestro cliente.</h4>
+
+                          <p>
+                            Ahora usted puede disfrutar de los beneficios de ahorro de cientos de dólares en llamadas internacionales.
+                            A continuación encontrará información de tu cuenta para acceder a sus servicios.
+
+                          </p>
+                          <p>
+                           Cuando acceda a su cuenta en línea usted puede revisar el saldo de su cuenta, recargue cuenta y gestionar sus.
+                           Puede acceder a su cuenta en línea con la siguiente información:
+                          </p>
+                           <p>
+                             <strong>Pagina Web:</strong> %{login_url}<br />
+                             <strong>Usuario:</strong> %{email}
+                           </p>"
+      forgot_password_html: " <h4>Oops! Parece que tu olvidaste tu contraseña.</h4>
+
+                                   <p>No te preocupes, le pasa a todos nosotros. Por razones de seguridad hemos generado una nueva contraseña para usted. </p>
+                                   <hr>
+                                   <p>
+                                     <strong>Usuario:</strong> <%= @user.email %>  <br />
+                                     <strong>Contraseña:</strong> <%= @random_password %>
+                                   </p>
+                                   <hr>
+                                   <p>Después de que se conecte usted puede cambiar esta contraseña temporal a lo que quieras. Sólo tienes que ir a tu perfil y actualizar su cuenta.</p>
+
+                                   <p>Y recuerde que debe mantener su contraseña en un lugar seguro ;)</p>"

@@ -1,0 +1,34 @@
+<div class="row-fluid">
+  <div class="span6">
+    <%= form_for @recharge, :html => {:class => 'form well well-small'} do |f| %>
+        <legend><img src="/images/types.png" class="pull-right" style="margin-top: 5px"> <%= t 'recharges.titles.form' %>
+        </legend>
+        <%= bootstrap_flash %>
+        <%= render "layouts/error", errors: @recharge.errors %>
+
+        <div class="control-group">
+          <div class="controls">
+            <%= f.text_field :card_name, :class => "span8", placeholder: t('recharges.fields.card_name') %>
+            <%= f.text_field :amount, :class => ' span4', placeholder: t('recharges.fields.amount') %>
+
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.text_field :number, :class => ' span5', placeholder:  t('recharges.fields.number') %>
+            <%= f.text_field :cvc, :class => ' span3', placeholder:  t('recharges.fields.cvc') %>
+            <%= f.text_field :exp_month, :class => ' span2', placeholder:  t('recharges.fields.exp_month') %>
+            <%= f.text_field :exp_year, :class => ' span2', placeholder:  t('recharges.fields.exp_year') %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.submit  t('recharges.fields.btn.recharge'), :disable_with => t('recharges.fields.btn.recharging'), :class => 'btn btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                      recharges_path, :class => 'btn' %>
+        </div>
+    <% end %>
+  </div>
+  <div class="span6">
+    <%= render "dashboard/account_balance" %>
+  </div>
+</div>

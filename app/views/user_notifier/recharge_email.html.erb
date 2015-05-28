@@ -1,0 +1,76 @@
+<table width="600" cellpadding="0" cellspacing="0" align="center" style=" border-radius:10px; border: 1px solid #e9e9e9; border-radius:10px">
+  <tbody>
+  <tr>
+    <td style=" padding:20px; background-color: white;">
+      <%= image_tag @receipt.agent.logo.url(:thumb), class: '' %>
+    </td>
+    <td style="font-size: 16px; color: #a3a4a8; text-align: left; font-weight: light; font-family: Helvetica, Arial, sans-serif; background-color:white; ">
+      <strong>Recharge</strong> notification
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style=" padding:0.25em; background-color: #e9e9e9; line-height: 16px;">
+    </td>
+  </tr>
+
+  <tr>
+    <td style=" padding:20px; background-color: white; font-size: 16px; color: #b8b9c1; font-weight: normal; font-family: Helvetica, Arial, sans-serif; line-height: 26px; vertical-align: top;">
+      <%= @receipt.user.full_name %> <br/>
+      <%= "#{@receipt.id}-#{@receipt.created_at.strftime('%Y%m%d%H%m%s')}" %>
+      <br/>
+      <%= @receipt.created_at.strftime('%m/%d/%y at %H:%m') %>
+    </td>
+    <td style=" padding:20px; background-color: white; font-size: 16px; color: #b8b9c1; font-weight: normal; font-family: Helvetica, Arial, sans-serif; line-height: 26px; vertical-align: top;"></td>
+  </tr>
+  <tr>
+    <td colspan="2" style=" padding:20px; background-color: white; font-size: 16px; color: #b8b9c1; font-weight: normal;font-family: Helvetica, Arial, sans-serif; line-height: 26px; vertical-align: top;">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th><%= t('receipts.fields.customer') %></th>
+          <th><%= t('receipts.fields.agent') %></th>
+          <th><%= t('receipts.fields.amount') %></th>
+          <th><%= t('shared.created_at') %></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><%= link_to @receipt.user.full_name, receipt_path(@receipt) %></td>
+              <td><%= @receipt.agent.full_name %></td>
+              <td><%= number_to_currency(@receipt.amount, {unit: '$', precision: 2}) %></td>
+              <td><%= l @receipt.created_at, format: :short %></td>
+            </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style=" padding:20px; background-color: white; font-size: 16px; color: #b8b9c1; font-weight: normal;font-family: Helvetica, Arial, sans-serif; line-height: 26px; vertical-align: top;">
+
+      <table>
+        <tr>
+          <td>
+            <strong><%= t('services.titles.tehblo') %></strong>
+
+            <p><%= t('services.text.tehablo_html') %></p>
+          </td>
+          <td>
+            <strong><%= t('services.titles.followme') %></strong>
+
+            <p><%= t('services.text.followme_html') %></p>
+          </td>
+          <td>
+            <strong><%= t('services.titles.access_numbers') %></strong>
+            <ul class="unstyled">
+              <li><h4>1 (201) 623-3387</h4></li>
+              <li><h4>1 (914) 249-9042</h4></li>
+              <li><h4>1 (203) 614-1208</h4></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  </tbody>
+</table>

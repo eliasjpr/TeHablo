@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  call_duration: 1
+  total_amount: 1.5
+  parent_call_uuid: MyString
+  call_uuid: MyString
+  call_direction: MyString
+  to_number: MyString
+  total_rate: 1.5
+  from_number: MyString
+  end_time: 2013-06-03 08:35:35
+  resource_uri: MyString
+
+two:
+  call_duration: 1
+  total_amount: 1.5
+  parent_call_uuid: MyString
+  call_uuid: MyString
+  call_direction: MyString
+  to_number: MyString
+  total_rate: 1.5
+  from_number: MyString
+  end_time: 2013-06-03 08:35:35
+  resource_uri: MyString

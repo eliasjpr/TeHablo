@@ -1,0 +1,32 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="well well-small">
+      <form action="/check_rates" method="get" class="form-inline">
+        <legend><%= t('rates.titles.search_rates') %></legend>
+        <%= t('rates.fields.call_from') %>
+        <%= select_tag "from", options_from_collection_for_select(@countries, :country_iso, :country, params[:from]) %>
+        &nbsp; &nbsp;  <%= t('rates.fields.call_to') %> &nbsp; &nbsp;
+        <%= select_tag "to", options_from_collection_for_select(@countries, :country_iso, :country, params[:to]) %>
+        <button type="submit" class="btn"><%= t('rates.btn.search') %></button>
+      </form>
+    </div>
+
+    <% if @inbound && @outbound %>
+        <div class="well">
+
+          <h1><%= @time_limit %></h1>
+          <legend><%= " #{t('rates.fields.call_from')} #{@inbound.country} #{t('rates.fields.call_to')} #{@outbound.country}" %></legend>
+
+          <h4>
+            <i class="icon-phone"></i>
+            <%= "#{t('rates.titles.rate_per_minute')} #{number_to_currency(@voice_rates, {unit: "$", precision: 2}).to_s}" %>
+            <% unless @number_rent.nil? %>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="icon-mobile-phone"></i> <%= "#{t('rates.titles.number_rent')} #{number_to_currency(@phone_rate, {unit: "$", precision: 2}).to_s}" %>
+                / <%= t('rates.fields.rent_unit') %>
+            <% end %>
+          </h4>
+        </div>
+    <% end %>
+  </div>
+</div>

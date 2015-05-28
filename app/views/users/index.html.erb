@@ -1,0 +1,66 @@
+<div class="page-header">
+  <h1>
+    <i class="icon-group"></i> <%= t 'users.title.title' %>
+    <span class="pull-right">
+      <%= link_to new_user_path, class: "btn btn-success" do %>
+          <i class="icon-user"></i>
+          <%= t('btn.add_customer') %>
+      <% end %>
+    </span>
+  </h1>
+</div>
+
+
+<%= bootstrap_flash %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th colspan="2"> <%= t 'users.name' %></th>
+    <th><%= t 'users.email' %></th>
+    <th><%= t 'users.balance' %></th>
+    <% if current_user.is_super_agent? %>
+        <th>Roles</th>
+        <th><%= t 'users.business_name' %></th>
+        <th><%= t 'users.commission' %></th>
+    <% end %>
+    <th><%= t 'users.account_status' %></th>
+    <th><%= t 'shared.created_at' %></th>
+    <th><%= t 'helpers.actions' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <% if user.is_agent? %>
+            <td><%= image_tag user.logo.url(:thumb), width: 35 %></td>
+        <% else %>
+            <td><%= image_tag user.gravatar_url, width: 35 %></td>
+        <% end %>
+        <td><%= link_to user.full_name, user_path(user) %></td>
+        <td><%= user.email %></td>
+        <td><%= number_to_currency(user.balance, {unit: '$', precision: 2}) %></td>
+        <% if current_user.is_super_agent? %>
+            <td><%= user.roles %></td>
+            <td><%= user.business_name %></td>
+            <td><%= number_to_percentage user.commission %></td>
+        <% end %>
+        <td><%= user.is_active? %></td>
+        <td><%= t user.date_created, format: :medium %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to edit_user_path(user), :class => 'btn btn-mini' do %>
+                <i class="icon-edit"></i>
+                <%= t 'btn.edit' %>
+            <% end %>
+            <%= link_to user_path(user), :method => :delete, :data => {confirm: t('helpers.links.confirm')}, :class => 'btn btn-mini btn-danger' do %>
+                <i class="icon-remove"></i>
+                <%= t 'helpers.titles.delete' %>
+            <% end %>
+
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

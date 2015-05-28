@@ -1,0 +1,23 @@
+<table class="table table-striped" id="CompletedCalls">
+  <thead>
+  <tr>
+    <th class="blue header"><%= t('calls.fields.from_number') %></th>
+    <th class="blue header"><%= t('calls.fields.to_number') %></th>
+    <th><%= t('calls.fields.call_duration') %></th>
+    <th class="blue header"><%= t('calls.fields.call_status') %></th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @active_calls.each do |call| %>
+      <tr>
+        <td><%= call["from"] %></td>
+        <td><%= call["to"] %></td>
+        <td>
+          <div class="since_call_started" datetime="<%= call["session_start"] %>"></div>
+        </td>
+        <td><%= call["call_status"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

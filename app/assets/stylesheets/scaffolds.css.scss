@@ -1,0 +1,143 @@
+/* Override some defaults */
+html, body {
+  background-image: url('../images/bg_tehablo.png');
+  font-size: 13px;
+  font-weight: normal !important;
+  line-height: 18px;
+  color: #404040;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300 !important;
+}
+
+@media (min-width: 979px) {
+  body {
+    padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+  }
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 979px) {
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+.container > footer p {
+  text-align: center; /* center align it with the container */
+}
+
+.container {
+  /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+}
+
+/* The white background content wrapper */
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+
+body.client {
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+
+.content-client {
+  background-color: #fff;
+  padding: 20px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+
+/* Page header tweaks */
+.page-header {
+  background-color: #f5f5f5;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+}
+
+/* Styles you shouldn't keep as they are for displaying this base example only */
+.content .span10,
+.content {
+  min-height: 500px;
+}
+
+.topbar .btn {
+  border: 0;
+}
+
+.balance {
+  font-size: 18pt;
+}
+
+.field_with_errors {
+  color: #b94a48;
+  display: inline;
+  width: inherit !important;
+}
+
+.field_with_errors input {
+  color: #b94a48;
+  border: 1px solid #b94a48
+}
+
+.navbar .brand {
+  float: left;
+  display: block;
+  padding: 2px 10px 2px 0;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.nav-avatar {
+  padding: 2px !important;
+}
+
+hr {
+  margin: 2px 0;
+}
+
+.big {
+  font-size: 56pt
+}
+
+.align-center {
+  text-align: center;
+}
+
+.service {
+  padding: 15px !important;
+  height: 450px;
+}
+
+.service {
+  text-align: center;
+  color: white;
+  background-color: #597FBC;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  height: auto;
+  border: none;
+}
+
+.service:hover {
+  color: #f8f9ff;
+  background-color: #445788;
+  text-decoration: none;
+}

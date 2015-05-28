@@ -1,0 +1,26 @@
+<% if current_user.is_super_agent? || current_user.is_agent? %>
+    <div class="well well-small">
+      <h4><i class="icon-user"></i> <%= t('dashboard.quick_recharge') %></h4>
+
+      <%= form_for @receipt, url: quick_recharge_path, :html => {class: 'form-vertical'} do |f| %>
+          <div class="control-group">
+            <div class="controls">
+              <input type="text"class="span12" name="call_id" value="" placeholder="Phone Number 19174367823">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <select name="receipt[amount]" id="receipt[amount]" class="span12">
+                <option value="10">$ 10.00 (US)</option>
+                <option value="15">$ 15.00 (US)</option>
+                <option value="20">$ 20.00 (US)</option>
+                <option value="25">$ 25.00 (US)</option>
+                <option value="30">$ 30.00 (US)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-success btn-small btn-block"><i class="icon-refresh"></i> <%= t('btn.quick_recharge') %></button>
+      <% end %>
+    </div>
+<% end %>

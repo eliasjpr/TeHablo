@@ -1,0 +1,122 @@
+<%= form_for @call, :html => {:class => 'form-horizontal well well-small'} do |f| %>
+    <div class="control-group">
+      <%= f.label :callsid, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :callsid, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :accountsid, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :accountsid, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :from, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :from, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :to, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :to, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :callstatus, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :callstatus, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :apiversion, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :apiversion, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :direction, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :direction, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :forwardedfrom, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :forwardedfrom, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :callername, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :callername, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :duration, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :duration, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :price, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :price, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :fromcity, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fromcity, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :fromstate, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fromstate, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :fromzip, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fromzip, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :fromcountry, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fromcountry, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :tocity, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :tocity, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :tostate, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :tostate, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :tozip, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :tozip, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :tocountry, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :tocountry, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  calls_path, :class => 'btn' %>
+    </div>
+<% end %>

@@ -1,0 +1,30 @@
+<div class="align-center">
+  <i class="icon-phone big"></i>
+
+  <h3><%= t 'users.tabs.my_services.te_hablo' %></h3>
+</div>
+
+<p>
+  <%= t 'users.tabs.my_services.te_hablo_text_html' %>
+  <%= link_to check_rates_path, class: 'btn btn-mini btn-block' do %>
+      <i class="icon-money"></i> <%= t('btn.view_rates') %>
+  <% end %>
+</p>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= t 'users.tabs.my_services.te_hablo_numbers' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @user.calling_ids.each do |phone| %>
+      <tr>
+        <td nowrap> <%= phone.call_id.split('@')[0] %> </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to new_calling_id_path(user_id: @user.id), class: "btn btn-success btn-block", data: {remote: true, target: "#modal"} do %>
+    <i class="icon-phone"></i> <%= t('btn.add_new_phone_number') %>
+<% end %>

@@ -1,0 +1,74 @@
+
+<div id="intro">
+  <div class="container">
+    <div class="content">
+      <div class="text">
+        <h2>Introducimos TeHablo</h2>
+
+        <p>
+        <ul>
+          <li>Una plataforma virtual para la realización de llamadas de larga distancia a precios
+            increiblemente bajos.
+          </li>
+          <li>Creado para pequenas emprezas que desean tener otra alternativa de ingreso para su negocio.</li>
+
+        </ul>
+        </p>
+      </div>
+      <div class="phone"><img src="../images/pic_p.png" alt=""></div>
+    </div>
+    <div class="signup">
+      <p>No tienes acceso? <strong>Crear cuenta aqui:</strong></p>
+
+      <%= form_tag(register_path, class: "form-vertical") do %>
+          <%= text_field_tag :email, params[:email], placeholder: "Email", class: "email", id: "email" %>
+          <%= text_field_tag :password, params[:password], placeholder: "Clave de Seguridad", class: "pass", id: "password" %>
+          <%= text_field_tag :password_confirmation, params[:password_confirmation], placeholder: "Confirmar Clave", class: "pass", id: "password" %>
+
+
+        <p>Al crear una cuenta TeHablo, yo accepto los <a href="#">Terminos y Condiciones de Uso</a> and <a
+        href="#">Politica De Privacidad</a>.</p>
+        <input type="submit" class="btn" value="Crear Cuenta">
+      <% end %>
+    </div>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / intro -->
+
+<div id="services">
+  <div class="container">
+    <section>
+      <article>
+        <h3>Ingresos para tu negocio</h3>
+
+        <p>Mientras tus clientes utilizen TeHablo tu negocio recibira ingresos. </p>
+
+        <div class="more"><a href="#" class="btn btn-grey">Leer mas</a></div>
+      </article>
+
+      <article>
+        <h3>Llamadas Internacionales</h3>
+
+        <p>I would like to avoid making these mistakes. But how do you avoid mistakes you make by default?
+          Ideally you transform your life so it has other defaults.</p>
+
+        <div class="more"><a href="#" class="btn btn-grey">Leer mas</a></div>
+      </article>
+      <article>
+        <h3>Deposito Automatico</h3>
+
+        <p>Deposito de ganacias automaticamente en tu cuenta corriente. </p>
+
+        <div class="more"><a href="#" class="btn btn-grey">Leer mas</a></div>
+      </article>
+
+    </section>
+    <div class="features">
+      <p>Ofrece TeHablo a tus clientes y obtenga mas ingresos. <%= link_to "Benficios para ti", sites_features_path %></p>
+    </div>
+  </div>
+  <!-- / container -->
+</div>
+<!-- / services -->
+</div>

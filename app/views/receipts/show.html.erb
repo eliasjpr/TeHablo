@@ -1,0 +1,81 @@
+
+<div class="page-header">
+  <h1>
+    <i class="icon-file-alt"></i>
+    <%= t('receipts.titles.show') %>
+
+    <% if current_user.is_super_agent? %>
+    <span class="pull-right">
+
+    <div class="btn-group">
+      <%= link_to receipts_path, :class => 'btn' do %> <i class="icon-arrow-left"></i> <%= t("helpers.links.back") %> <% end %>
+      <%= link_to edit_receipt_path(@receipt), :class => 'btn' do %>  <i class="icon-edit"></i> <%=  t("helpers.links.edit") %> <% end %>
+      <%= link_to receipt_path(@receipt),
+                  :method => 'delete',
+                  :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+                  :class => 'btn btn-danger' do %> <i class="icon-remove"></i> <%= t("helpers.links.destroy") %>     <% end %>
+    </div>
+
+    </span>
+    <% end %>
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span6">
+      <%= image_tag @receipt.agent.logo.url(:medium), class: '' %>
+    </div>
+
+
+
+    <div class="span6 well well-small">
+      <table class="invoice-head">
+        <tbody>
+        <tr>
+          <td>
+            <%= @receipt.agent.business_name %>
+          </td>
+        </tr>
+        <tr>
+          <td class="pull-right"><strong> <%= t("helpers.fields.customer") %>-</strong></td>
+          <td><%= @receipt.user.full_name %></td>
+        </tr>
+        <tr>
+          <td class="pull-right"><strong> <%= t("helpers.fields.date") %>-</strong></td>
+          <td><%= @receipt.created_at.strftime('%m/%d/%y at %H:%m') %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <h2> <%= t('receipts.titles.show') %></h2>
+  <br>
+  <div class="row-fluid">
+    <div class="span12 well well-small invoice-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th><%= t('receipts.fields.customer') %></th>
+          <th><%= t('receipts.fields.agent') %></th>
+          <th><%= t('receipts.fields.amount') %></th>
+          <th><%= t('receipts.fields.ip') %></th>
+          <th><%= t('shared.created_at') %></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><%= link_to @receipt.user.full_name, receipt_path(@receipt) %></td>
+              <td><%= @receipt.agent.full_name %></td>
+              <td><%= number_to_currency(@receipt.amount, {unit: '$', precision: 2}) %></td>
+              <td><%= @receipt.ip_address %></td>
+              <td><%= t @receipt.created_at, format: :short %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%= render "layouts/service_text" %>
+</div>

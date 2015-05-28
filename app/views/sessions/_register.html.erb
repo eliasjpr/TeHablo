@@ -1,0 +1,40 @@
+<%= form_tag(register_path, class: "form-vertical") do %>
+
+    <div class="control-group">
+
+      <div class="controls">
+        <%= text_field_tag :first_name, params[:first_name], placeholder: "Email", class: "span12 required email login-input", id: "first_name" %>
+      </div>
+    </div>
+    <div class="control-group">
+
+      <div class="controls">
+        <%= text_field_tag :last_name, params[:last_name], placeholder: "Last Name", class: "span12 required email login-input", id: "first_name" %>
+      </div>
+    </div>
+    <div class="control-group">
+
+      <div class="controls">
+        <%= text_field_tag :email, params[:email], placeholder: "Email", class: "span12 required email login-input", id: "email" %>
+      </div>
+    </div>
+    <div class="control-group">
+
+      <div class="controls">
+        <%= password_field_tag :password, params[:password], placeholder: "Password", class: "span12 required login-input", id: "password" %>
+      </div>
+    </div>
+    <div class="control-group">
+
+      <div class="controls">
+        <%= password_field_tag :password_confirmation, params[:password_confirmation], placeholder: "Confirm password", class: "span12 required login-input", id: "confirm_password" %>
+
+      </div>
+    </div>
+
+    <div>
+      <%= button_tag 'Register', id: "register-submit", class: "btn btn-block btn-large" %>
+    </div>
+
+
+<% end %>

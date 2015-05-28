@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  agent_id: 1
+  last4: 1
+  card_type: MyString
+  paid: false
+  amount: 9.99
+  currency: MyString
+  refunded: false
+  fee: 9.99
+  captured: false
+  failure_message: MyString
+  failure_code: MyString
+  amount_refunded: 9.99
+  customer: MyString
+  invoice: MyString
+  description: MyString
+  dispute: MyString
+
+two:
+  user_id: 1
+  agent_id: 1
+  last4: 1
+  card_type: MyString
+  paid: false
+  amount: 9.99
+  currency: MyString
+  refunded: false
+  fee: 9.99
+  captured: false
+  failure_message: MyString
+  failure_code: MyString
+  amount_refunded: 9.99
+  customer: MyString
+  invoice: MyString
+  description: MyString
+  dispute: MyString

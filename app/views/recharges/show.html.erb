@@ -1,0 +1,59 @@
+
+<div class="page-header">
+  <h1>
+    <%= t 'recharges.titles.title' %>
+
+    <span class="pull-right">
+      <div class="btn-group">
+        <%= link_to recharges_path, :class => 'btn' do %> <i class="icon-arrow-left"></i> <%= t("helpers.links.back") %>  <% end %>
+        <%= link_to edit_recharge_path(@recharge), :class => 'btn' do %> <i class="icon-edit"></i> <%=  t("helpers.links.edit") %> <% end %>
+        <%= link_to recharge_path(@recharge),
+                    :method => 'delete',
+                    :data => {:confirm => t("helpers.links.confirm")},
+                    :class => 'btn btn-danger' do %> <i class="icon-remove"></i> <%= t("helpers.links.delete") %> <% end %>
+      </div>
+    </span>
+  </h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= t('recharges.fields.user') %>:</strong></dt>
+  <dd><%= @recharge.user.full_name %></dd>
+  <dt><strong><%= t('recharges.fields.agent')  %>:</strong></dt>
+  <dd><%= @recharge.agent.full_name %></dd>
+  <dt><strong><%= t('recharges.fields.last4')  %>:</strong></dt>
+  <dd><%= @recharge.last4 %></dd>
+  <dt><strong><%= t('recharges.fields.card_type')  %>:</strong></dt>
+  <dd><%= @recharge.card_type %></dd>
+  <dt><strong><%= t('recharges.fields.paid')  %>:</strong></dt>
+  <dd><%= @recharge.paid ? "Yes" : "No" %></dd>
+  <dt><strong><%= t('recharges.fields.amount')  %>:</strong></dt>
+  <dd><%= number_to_currency @recharge.amount, {unit: '$', precision: 2} %></dd>
+  <dt><strong><%= t('recharges.fields.currency')  %>:</strong></dt>
+  <dd><%= @recharge.currency %></dd>
+
+  <% if current_user.is_super_agent? %>
+      <dt><strong><%= t('recharges.fields.refunded')  %>:</strong></dt>
+      <dd><%= @recharge.refunded %></dd>
+      <dt><strong><%= t('recharges.fields.fee')  %>:</strong></dt>
+      <dd><%= number_to_currency @recharge.fee, {unit: '$', precision: 2} %></dd>
+      <dt><strong><%= t('recharges.fields.captured')  %>:</strong></dt>
+      <dd><%= @recharge.captured ? "Yes" : "No" %></dd>
+      <dt><strong><%= t('recharges.fields.failure_message') %>:</strong></dt>
+      <dd><%= @recharge.failure_message %></dd>
+      <dt><strong><%= t('recharges.fields.failure_code')%>:</strong></dt>
+      <dd><%= @recharge.failure_code %></dd>
+      <dt><strong><%= t('recharges.fields.amount_refunded') %>:</strong></dt>
+      <dd><%= number_to_currency @recharge.amount_refunded, {unit: '$', precision: 4} %></dd>
+      <dt><strong><%= t('recharges.fields.customer') %>:</strong></dt>
+      <dd><%= @recharge.customer %></dd>
+      <dt><strong><%= t('recharges.fields.invoice') %>:</strong></dt>
+      <dd><%= @recharge.invoice %></dd>
+      <dt><strong><%= t('recharges.fields.description') %>:</strong></dt>
+      <dd><%= @recharge.description %></dd>
+      <dt><strong><%= t('recharges.fields.dispute') %>:</strong></dt>
+      <dd><%= @recharge.dispute %></dd>
+  <% end %>
+</dl>
+
+

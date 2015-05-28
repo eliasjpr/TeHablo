@@ -1,0 +1,123 @@
+<%= form_for @user, :html => {:class => 'form-horizontal well well-small'} do |f| %>
+    <%= bootstrap_flash %>
+    <%= render "layouts/error", errors: @user.errors %>
+    <div class="row-fluid">
+      <div class="span6">
+        <legend><%= t 'users.title.personal_info' %></legend>
+        <div class="control-group">
+          <%= f.label :first_name, t('users.first_name'), :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :first_name, :class => 'text_field' %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :last_name, t('users.last_name'), :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :last_name, :class => 'text_field' %>
+          </div>
+        </div>
+
+        <legend><%= t 'users.account_access'  %></legend>
+        <div class="control-group">
+          <%= f.label :email, t('users.email') , :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :email, :class => 'text_field' %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :password, t('users.password'), :class => 'control-label' %>
+          <div class="controls">
+            <%= f.password_field :password, :class => 'text_field', placeholder: "Account password" %>
+          </div>
+          <br/>
+
+          <div class="controls">
+            <%= f.password_field :password_confirmation, :class => 'text_field', placeholder:  t('users.password_confirmation') %>
+          </div>
+        </div>
+
+        <legend><%= t 'dashboard.account_balance' %></legend>
+        <% if @user.id.nil? %>
+            <div class="control-group">
+              <%= label_tag "receipt",  t('users.balance'), {class: 'control-label'} %>
+              <div class="controls">
+                <%= select_tag "receipt", options_for_select(Receipt::RECHARGE_AMOUNTS, '10') %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <div class="span6">
+        <% if current_user.is_super_agent? || @user.is_agent? %>
+            <legend><%= t 'users.title.business_information' %></legend>
+            <div class="control-group">
+              <%= f.label :logo, t('users.logo'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.file_field :logo, :class => 'text_field' %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= f.label :business_name, t('users.business_name'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :business_name, :class => 'text_field' %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= f.label :bank_account, t('users.bank.name'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :bank_account, :class => 'text_field' %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= f.label :routing_number, t('users.bank.routing') , :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :routing_number, :class => 'text_field' %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= f.label :account_number, t('users.bank.account'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :account_number, :class => 'text_field' %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= f.label :tax_id , t('users.bank.tax_id'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :tax_id, :class => 'text_field' %>
+              </div>
+            </div>
+        <% end %>
+
+
+        <% if current_user.is_super_agent? %>
+
+
+            <div class="control-group">
+              <%= f.label :commission, t('users.commission'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_field :commission, :class => 'text_field' %>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= f.label :account_status, t('users.account_status'), :class => 'control-label' %>
+              <div class="controls">
+                <%= f.check_box :account_status, :class => 'text_field' %>  Active
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= f.label :roles, t('users.roles'), :class => 'control-label' %>
+              <div class="controls">
+                <%= select_tag "user[roles]", options_for_select(User::ROLES, @user.roles), :class => 'text_field' %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= f.submit t('btn.add_customer'), :class => 'btn btn-primary' %>
+      <%= link_to t("helpers.links.cancel"), users_path, :class => 'btn' %>
+    </div>
+<% end %>

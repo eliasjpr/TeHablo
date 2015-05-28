@@ -1,0 +1,27 @@
+
+<div class="page-header">
+  <h1>
+    <i class="icon-mobile-phone"></i>
+    <%= t('callingids.title.show') %>
+
+    <span class="pull-right">
+      <div class="btn-group">
+        <%= link_to calling_ids_path, :class => 'btn' do %> <i class="icon-arrow-left"></i> <%= t("helpers.links.back") %> <% end %>
+        <%= link_to edit_calling_id_path(@calling_id), :class => 'btn'do  %> <i class="icon-edit"></i> <%= t("helpers.links.edit") %> <% end %>
+        <%= link_to  calling_id_path(@calling_id),
+                    :method => 'delete',
+                    :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+                    :class => 'btn btn-danger' do  %> <i class="icon-remove"></i> <%= t("helpers.links.destroy") %> <% end %>
+      </div>
+    </span>
+  </h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= t('callingids.fields.callingid') %>:</strong></dt>
+  <dd><%= @calling_id.call_id %></dd>
+  <dt><strong><%= t('callingids.fields.customer') %>:</strong></dt>
+  <dd><%= @calling_id.user.full_name %></dd>
+</dl>
+
+

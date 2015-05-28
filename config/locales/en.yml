@@ -1,0 +1,263 @@
+--- 
+en: 
+  btn: 
+    add_customer: "Add New Customer"
+    add_new_phone_number: "Add new phone number"
+    buy_number: "Buy telephone number"
+    delete: "Delete"
+    edit: "Edit"
+    enable_money_transfer: "Enable Money Transfer"
+    quick_recharge: "Recharge Customer"
+    recharge_account: "Recharge My Account"
+    recharge_customer: "Recharge Customer"
+    view_rates: "View Rates"
+  callingids: 
+    btn: 
+      add_callingid: "Add Phone Number"
+    fields: 
+      callingid: "Telephone Number"
+      customer: "Customer"
+    titles: 
+      edit: "Edit linked telephone"
+      form: "Link Telephone Number"
+      list: "Linked Telephone Numbers"
+      new: "Link new telephone"
+      show: "Calling ID"
+  calls: 
+    btn: 
+      recharge_customer: "Recharge Customer"
+    fields: 
+      agent: "Agent"
+      api: "API ID"
+      bill_duration: "Bill Duration"
+      billed_duration: "Billed Duration"
+      call_direction: Direction
+      call_duration: "Call Duration"
+      call_status: "Call Status"
+      call_uuid: "Call SID"
+      date: "Date"
+      end_time: "End Time"
+      from_number: "From"
+      invoice: "Invoice"
+      parent_call_uuid: "Parent call UUID"
+      print_receipt: "Print receipt"
+      resource_uri: "Resource URI"
+      thank_you: "Thank you for your payment"
+      to_number: To
+      total_amount: "Total amount"
+      total_rate: "Total Cost"
+      user: User
+    titles: 
+      billing_info: "Billing Information"
+      edit: "Edit Call"
+      form: "Recharge Customer Account"
+      list: Calls
+      new: "Add New Call"
+      show: "Call Detail Record"
+      user_information: "User Information"
+  dashboard: 
+    account_balance: "Account Balance"
+    active_calls: "Active Calls"
+    commission_rate: "Commission Rate"
+    quick_recharge: "Quick Customer Recharge"
+    title: Dashboard
+    todays_calls: "Today Calls"
+    total_revenue: "Total Revenue"
+    total_sales: "Total Sales"
+  menu: 
+    account: 
+      logout: Logout
+      myaccount: "My Account"
+      recharge_account: "Recharge My Account"
+    billpayment: "Bill Payment Center"
+    customers: 
+      add: "Add New Customer"
+      all: "All My Customers"
+      mycustomers: "My Customers"
+      receipts: "Recharge Receipts"
+      recharge: "Recharge Customer"
+    dashboard: "Dashboard"
+    rates: "Rates"
+    reports: 
+      calls: "My Call Records"
+      myreports: "Reports"
+      recharges: "My Account Recharges"
+    settings: 
+      callids: "Manage Call IDs"
+      mysettings: "Settings"
+      rates: "Manage Rates"
+    topup: "Mobile Top Up"
+  rates: 
+    btn: 
+      add_new: "Add New Calling Rate"
+      save_rate: "Recharge Customer"
+      search: "Search"
+    fields: 
+      call_from: "Calling from"
+      call_to: "to "
+      country: Country
+      country_code: "Country Code"
+      country_iso: "Country Code Alt"
+      direction: Direction
+      number_type: "Number type"
+      prefix: Prefix
+      rent_per_number: "Rent Per Number"
+      rent_unit: month
+      setup_cost_per_number: "Setup Number Cost"
+      unit_in_seconds: "Unit in seconds"
+      voice_rate: "Voice Rate"
+    text: 
+      call: "calls to"
+    titles: 
+      check_rates: "Check International Rates"
+      country_info: "Country Information"
+      edit: "Edit International Rate"
+      form: "Recharge Customer Account"
+      list: "International Calling Rates"
+      new: "Add New International Rate"
+      number_rent: "FollowMe Number Rent"
+      rate_per_minute: "Rate per minute"
+      search_rates: "Search rates"
+      show: "International Rate"
+      voice_rate: "Voice Rate Information"
+  receipts: 
+    btn: 
+      recharge_customer: "Recharge Customer"
+    fields: 
+      agent: Agent
+      amount: Amount
+      customer: Customer
+      date: Date
+      ip: "Ip Address"
+      rate: Rate
+      revenue: Revenue
+      transfer_status: "Transfer status"
+    titles: 
+      edit: "Recharge Customer"
+      form: "Recharge Customer Account"
+      list: Receipts
+      new: "Recharge Customer"
+      show: Receipt
+  recharges: 
+    fields: 
+      agent: Agent
+      amount: "Recharge Amount 10.00"
+      amount_refunded: "Amount Refunded"
+      btn: 
+        recharge: Recharge
+        recharging: Recharging
+      captured: Captured
+      card_name: "Name on card"
+      card_type: "Card Type"
+      currency: Currency
+      cvc: "CVC Code"
+      description: Description
+      dispute: Dispute
+      exp_month: YY
+      exp_year: MM
+      failure_code: "Failure code"
+      failure_message: "Failure message"
+      fee: Fee
+      invoice: Invoice
+      last4: "Last 4 Digits"
+      number: "Credit Card Number"
+      paid: Paid
+      refunded: Refunded
+      user: Customer
+    titles: 
+      new: "Credit Card Information"
+      recharge: "Recharge My Account"
+      recharges: Recharges
+      title: Recharge
+  services: 
+    text: 
+      access_numbers_html: "<ul><li>1 (201) 623-3387</li><li>1 (914) 249-9042</li><li>1 (203) 614-1208</li></ul>"
+      followme_html: "Allows family, friends and co-business communicate with you by making a local call in their country.  <ol><li>Pick your telefone number</li><li>Available in over 20 countries</li><li>Unlimited calls</li></ol>"
+      tehablo_html: "Make international calls at rather low prices without need of calling card, dialing codes or PIN.<ul><li>Call directly from any phone</li><li>No Contract</li><li>No PIN dialing</li></ol>"
+      to_make_call: "To Make a call, please dial one of the access numbers below"
+    titles: 
+      access_numbers: "Access Numbers"
+      followme: "Follow Me"
+      tehablo: "International Call"
+      title: "Save big with our international calling services"
+  shared: 
+    actions: Actions
+    confirm: "Are you sure?"
+    created_at: "Date Created"
+    updated_at: Updated
+  time: 
+    formats: 
+      short: "%m/%d/%y %I:%M %P"
+  users: 
+    account_access: "Account Access"
+    account_status: "Account Status"
+    auth_token: "Account Token"
+    balance: Balance
+    bank: 
+      account: "Bank Account"
+      name: "Bank Name"
+      routing: "Routing Number"
+      tax_id: "Tax EIN"
+    business_name: "Business Name"
+    commission: Commission
+    email: Email
+    first_name: "First Name"
+    last_name: "Last Name"
+    logo: "Business Logo"
+    name: Name
+    password: password
+    password_confirmation: "Password Confirmation"
+    roles: Roles
+    sid: "Account SID"
+    tabs: 
+      my_services: 
+        follow_me: "Follow Me"
+        follow_me_numbers: ""
+        follow_me_text_html: "Get a phone number in a foreign country that rings to any number in the US. For $10.00/month receive unlimited calls to any phone in the USA."
+        smartphone: "Smartphone App"
+        smartphone_text_html: "Install the Android or Iphone on your phone.<ul style='text-align:left'><li>Install Zoiper on your iPhone or Android device</li><li>Open the Zoiper App</li><li>Scan the QR code below</li><li>Type in your agent account password</li></ul>"
+        te_hablo: TeHablo
+        te_hablo_numbers: "Phone Numbers"
+        te_hablo_text_html: "Make international call at a very low cost to anywhere around the world."
+    text: 
+      money_transfer_alt_html: "<strong>You don't have automatic money transfer disabled.</strong> <br/> We deposit each day's Commission Earned in the bank account you setup with TeHablo. Each transfer costs 50¢, and failed transfers cost an additional $1.5. <br/> (This feature is only available in the US at the moment.)</p>"
+      money_transfer_html: "<strong>You have automatic money transfer enabled.</strong> Woohoo! <br/> Each transfer costs 50¢, and failed transfers cost an additional $1.5. <br/>"
+    title: 
+      add_new: "Add new Customer"
+      business_information: "Business Information"
+      call_history: "Call History"
+      edit_new: "Edit new Customer"
+      money_transfer: "Money transfers"
+      my_services: "My Services"
+      personal_info: "Personal Information"
+      recharge_history: "Recharge History"
+      show: Account
+      title: Customers
+  email:
+    welcome_html: " <h4>We are happy to have you as our customer.</h4>
+
+                        <p>
+                          Now you can enjoy the benefits of saving hundreds of dollars on international calling.
+                          Below you will find your account information to access your services.
+
+                        </p>
+                        <p>
+                          When you access your account online your can review your account balance, recharge account and manage your services.
+                          You can access your account online using the following information:
+                        </p>
+                         <p>
+                           <strong>Website:</strong> %{login_url}<br />
+                           <strong>Username:</strong> %{email}
+                         </p>"
+    forgot_password_html: "<h4>Oops! It seems your forgot your password.</h4>
+
+                                 <p>Don't worry it happens to all of us. For security reasons we have generated a new password for you. </p>
+                                 <hr>
+                                 <p>
+                                   <strong>Username:</strong> %{email}  <br />
+                                   <strong>Password:</strong> %{password}
+                                 </p>
+                                 <hr>
+                                 <p>After you login with you can change this temporary password to whatever you want. Just go to your profile and update your account.</p>
+
+                                 <p>And remember to keep your password in a safe place. ;)</p>"

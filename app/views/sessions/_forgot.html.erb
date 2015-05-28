@@ -1,0 +1,10 @@
+<%= form_tag(forgot_password_path, class: "form-vertical") do %>
+    <div class="control-group">
+      <div class="controls">
+        <%= text_field_tag :email, params[:email], placeholder: "Enter your email", class: "span12 required email login-input", id: "email" %>
+      </div>
+    </div>
+    <div>
+      <%= button_tag 'Recover', id: "forgot-submit", class: "btn btn-success btn-block btn-large" %>
+    </div>
+<% end %>

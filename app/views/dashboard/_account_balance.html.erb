@@ -1,0 +1,24 @@
+<div class="well well-small">
+  <h4>
+    <i class="icon-bar-chart"></i>
+    <%= t('dashboard.account_balance') %>
+    <span class="pull-right"><%= number_to_currency(current_user.balance, {unit: '$', precision: 2}) %></span>
+  </h4>
+  <hr>
+  <% if current_user.is_agent? || current_user.is_super_agent? %>
+      <h5 class="text-info"><%= t('dashboard.total_sales') %>
+        <span class="pull-right"><strong><%= number_to_currency(current_user.total_sales, {unit: '$', precision: 2}) %></strong></span>
+      </h5>
+      <hr>
+      <h5 class="text-success"><%= t('dashboard.total_revenue') %>
+        <span class="pull-right"><strong><%= number_to_currency(current_user.total_revenue, {unit: '$', precision: 2}) %></strong></span>
+      </h5>
+      <hr>
+      <h5><%= t('dashboard.commission_rate') %>
+        <span class="pull-right"><strong><%= number_to_percentage(current_user.get_agent_commission) %></strong></span>
+      </h5>
+      <br>
+  <% end %>
+  <%= link_to new_recharge_path, class: "btn btn-success btn-block" do %> <i class="icon-credit-card"></i> <%= t('btn.recharge_account') %>
+  <% end %>
+</div>

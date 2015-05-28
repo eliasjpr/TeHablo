@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1>
+    <%= t 'recharges.titles.recharges' %>
+
+    <%= link_to new_recharge_path, class: 'btn btn-success pull-right' do %>  <i class="icon-refresh"></i> Recharge My
+        Account
+    <% end %>
+  </h1>
+</div>
+
+<%= render "recharges/table", model_class: Recharge, recharges: @recharges %>
+
+

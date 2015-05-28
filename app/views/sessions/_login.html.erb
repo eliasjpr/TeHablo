@@ -1,0 +1,13 @@
+<%= form_tag(login_path, class: "form-vertical") do %>
+    <div class="control-group-merged">
+      <div class="control-group">
+        <%= text_field_tag :email, params[:email], placeholder: "Email", class: "span12 required login-input", id: "email" %>
+      </div>
+      <div class="control-group">
+        <%= password_field_tag :password, params[:password], placeholder: "Password", class: "span12 required login-input", id: "password" %>
+      </div>
+    </div>
+    <div>
+      <%= button_tag 'Login', id: "login-submit", class: "btn btn-success btn-block btn-large" %>
+    </div>
+<% end %>

@@ -1,0 +1,131 @@
+<div class="page-header">
+  <h1>
+    <% if @user.is_agent? %>
+        <%= image_tag @user.logo.url(:thumb), width: 35 %>
+    <% else %>
+        <%= image_tag @user.gravatar_url, width: 35 %>
+    <% end %>
+    <%= @user.full_name %> <%= t 'users.title.show' %>
+    <span class="pull-right">
+      <div class="btn-group">
+        <%= link_to users_path, :class => 'btn' do %> <i class="icon-arrow-left"></i> <%= t 'helpers.links.back' %>
+        <% end %>
+        <%= link_to edit_user_path(@user), :class => 'btn ' do %>
+            <i class="icon-edit"></i> <%= t 'helpers.titles.edit' %>
+        <% end %>
+        <% if current_user.id != @user.id %>
+            <%= link_to user_path(@user),
+                        :method => 'delete',
+                        :data => {:confirm => t("helpers.links.confirm")},
+                        :class => 'btn btn-danger' do %>
+                <i class="icon-remove"></i> <%= t 'helpers.links.destroy' %>
+            <% end %>
+        <% end %>
+      </div>
+    </span>
+  </h1>
+</div>
+<%= bootstrap_flash %>
+
+<div class="row-fluid">
+  <div class="span6">
+    <dl class="dl-horizontal">
+      <dt><strong><%= t 'users.name' %>:</strong></dt>
+      <dd><%= @user.full_name %></dd>
+      <dt><strong><%= t 'users.email' %>:</strong></dt>
+      <dd><%= @user.email %></dd>
+      <dt><strong><%= t 'users.balance' %>:</strong></dt>
+      <dd><%= number_to_currency(@user.balance, {unit: "$", precision: 2}) %></dd>
+
+      <% if current_user.is_super_agent? || @user.is_agent? %>
+          <dt><strong><%= t 'users.roles' %>:</strong></dt>
+          <dd><%= @user.roles %></dd>
+          <dt><strong><%= t 'users.business_name' %>:</strong></dt>
+          <dd><%= @user.business_name %></dd>
+          <dt><strong><%= t 'users.commission' %>:</strong></dt>
+          <dd><%= number_to_percentage(@user.get_agent_commission) %></dd>
+      <% end %>
+    </dl>
+  </div>
+  <div class="span6">
+    <% if (@user.is_super_agent? || @user.is_agent?) && (!@user.routing_number.to_s.empty? && !@user.account_number.to_s.empty? && !@user.tax_id.to_s.empty?) %>
+        <div class="well well-small">
+          <h3><%= t 'users.title.money_transfer' %></h3>
+
+          <p>
+            <%= t 'users.text.money_transfer_html' %>
+          </p>
+          <dl class="dl-horizontal" style="margin:0;">
+            <dt><strong><%= t('users.bank.account') %>:</strong></dt>
+            <dd><%= @user.bank_account %></dd>
+            <dt><strong><%= t('users.bank.routing') %>:</strong></dt>
+            <dd><%= @user.routing_number %></dd>
+            <dt><strong><%= t('users.bank.number') %>:</strong></dt>
+            <dd><%= @user.account_number %></dd>
+            <dt><strong><%= t('users.bank.tax_id') %>:</strong></dt>
+            <dd><%= @user.tax_id %></dd>
+          </dl>
+        </div>
+    <% elsif @user.is_agent? %>
+        <div class="well well-small">
+          <h3><%= t('users.title.money_transfer') %></h3>
+
+          <p>
+            <%= t 'users.text.money_transfer_alt_html' %>
+          </p>
+          <hr>
+          <%= link_to t('btn.enable_money_transfer'), edit_user_path(@user), class: "btn btn-success btn-block" %>
+        </div>
+    <% end %>
+
+    <% if current_user.is_super_agent? %>
+        <div class="well well-small">
+          <dl class="dl-horizontal" style="margin:0;">
+            <dt><strong><%= t 'users.account_status' %>:</strong></dt>
+            <dd><%= @user.is_active? %></dd>
+            <dt><strong><%= t 'users.sid' %>:</strong></dt>
+            <dd><%= @user.sid %></dd>
+            <dt><strong><%= t 'users.auth_token' %>:</strong></dt>
+            <dd><%= @user.auth_token %></dd>
+          </dl>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active">
+        <a href="#services" data-toggle="tab"> <i class="icon-bullhorn"></i> <%= t 'users.title.my_services' %></a></li>
+      <li><a href="#calls" data-toggle="tab"> <i class="icon-phone"></i> <%= t 'users.title.call_history' %></a></li>
+      <li>
+        <a href="#recharges" data-toggle="tab"> <i class="icon-refresh"></i> <%= t 'users.title.recharge_history' %></a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="services">
+
+        <ul class="thumbnails">
+          <li class="span3">
+            <div class="thumbnail service"> <%= render "follow_me" %></div>
+          </li>
+          <li class="span3">
+            <div class="thumbnail service"> <%= render 'te_hablo' %></div>
+          </li>
+          <li class="span3">
+            <div class="thumbnail service"> <%= render 'smart_phone' %></div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="calls">
+        <%= render "calls/call_table", calls: @user.calls %>
+      </div>
+      <div class="tab-pane" id="recharges">
+        <%= render "receipts/table" %>
+      </div>
+    </div>
+  </div>
+</div>

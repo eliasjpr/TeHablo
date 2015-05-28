@@ -1,0 +1,111 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">
+        <% if current_user.is_agent? %>
+            <%= image_tag current_user.logo.url(:thumb), style: "max-height:37px" %>
+        <% elsif current_user.is_customer? %>
+            <%= image_tag current_user.agent.logo.url(:thumb), style: "max-height:37px" %>
+        <% else %>
+            <img src="/images/TeHablo.jpeg" alt="Te Hablo Communicaciones sin limites" width="52"/>
+        <% end %>
+      </a>
+
+      <div class="container nav-collapse">
+
+        <ul class="nav">
+          <li>
+            <%= link_to dashboard_index_path do %> <i class="icon-dashboard"></i> <%= t('menu.dashboard') %>
+            <% end %>
+          </li>
+
+          <% if current_user.is_agent? || current_user.is_super_agent? %>
+              <li class="dropdown">
+                <%= link_to users_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+                    <i class="icon-group"></i> <%= t('menu.customers.mycustomers') %> <b class="caret"></b>
+                <% end %>
+                <ul class="dropdown-menu">
+                  <li><%= link_to users_path do %> <i class="icon-group"></i> <%= t('menu.customers.mycustomers') %>
+                    <% end %></li>
+                  <li><%= link_to new_user_path do %>
+                        <i class="icon-user"></i> <%= t('menu.customers.add') %>
+                    <% end %></li>
+                  <li><%= link_to receipts_path do %>
+                        <i class="icon-file-alt"></i> <%= t('menu.customers.receipts') %>
+                    <% end %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to new_receipt_path do %>
+                        <i class="icon-credit-card"></i> <%= t('menu.customers.recharge') %></a>
+                    <% end %></li>
+                </ul>
+              </li>
+          <% end %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="icon-bar-chart"></i> <%= t('menu.reports.myreports') %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to recharges_path do %>
+                    <i class="icon-file-alt"></i> <%= t('menu.reports.recharges') %>
+                <% end %></li>
+              <li><%= link_to calls_path do %>
+                    <i class="icon-phone"></i> <%= t('menu.reports.calls') %>
+                <% end %></li>
+            </ul>
+          </li>
+          <% if current_user.is_super_agent? %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                  <i class="icon-wrench"></i> <%= t('menu.settings.mysettings') %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to calling_ids_path do %>
+                        <i class="icon-mobile-phone"></i> <%= t('menu.settings.callids') %>
+                    <% end %></li>
+                  <li><%= link_to rates_path do %>
+                        <i class="icon-money"></i>  <%= t('menu.settings.rates') %>
+                    <% end %></li>
+                </ul>
+              </li>
+          <% end %>
+          <li><%= link_to check_rates_path do %>
+                <i class="icon-money"></i> <%= t('menu.rates') %>
+            <% end %></li>
+        </ul>
+
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav-avatar" data-toggle="dropdown" style=" margin: 0;">
+              <%= current_user.full_name if is_user_logged_in? %>
+              <strong>(<%= current_user.roles if is_user_logged_in? and not current_user.is_customer? %>)</strong>
+              <%= image_tag current_user.gravatar_url size: 35 %>
+              <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li style="text-align: center">
+                <%= image_tag current_user.gravatar_url, width: 120, class: "img-circle", align: "center" %>
+              </li>
+              <li class="divider"></li>
+              <li><%= link_to user_path(current_user) do %> <i class="icon-user"></i> <%= t('menu.account.myaccount') %>
+                <% end %></li>
+              <li><%= link_to new_recharge_path do %>
+                    <i class="icon-credit-card"></i> <%= t('menu.account.recharge_account') %>
+                <% end %></li>
+              <li><%= link_to logout_path, method: :delete do %>
+                    <i class="icon-signout"></i> <%= t('menu.account.logout') %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

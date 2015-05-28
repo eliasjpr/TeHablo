@@ -1,0 +1,53 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= t('receipts.fields.customer') %></th>
+    <th><%= t('receipts.fields.agent') %></th>
+    <th><%= t('receipts.fields.amount') %></th>
+    <% if current_user.is_agent? || current_user.is_super_agent? %>
+        <th><%= t('receipts.fields.revenue') %></th>
+        <th><%= t('receipts.fields.rate') %></th>
+        <th><%= t('receipts.fields.ip') %></th>
+        <th><%= t('receipts.fields.transfer_status') %></th>
+    <% end %>
+
+    <th><%= t('shared.created_at') %></th>
+    <% if current_user.is_super_agent? %>
+        <th><%= t("helpers.actions") %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @receipts.each do |receipt| %>
+      <tr>
+        <td><%= link_to receipt.user.full_name, receipt_path(receipt) %></td>
+        <td><%= receipt.agent.full_name %></td>
+        <td><%= number_to_currency(receipt.amount, {unit: '$', precision: 2}) %></td>
+        <% if current_user.is_agent? || current_user.is_super_agent? %>
+            <td><%= number_to_currency(receipt.commission_earned, {unit: '$', precision: 2}) %></td>
+            <td><span class="label"><%= receipt.commission_rate %> %</span></td>
+            <td><%= receipt.ip_address %></td>
+            <td><%= content_tag "span", receipt.transfer_status, class: "label label-#{receipt.transfer_label}" %> </td>
+        <% end %>
+
+        <td><%= l receipt.created_at, format: :short %></td>
+        <% if current_user.is_super_agent? %>
+            <td>
+              <div class="btn-group">
+                <%= link_to edit_receipt_path(receipt), :class => 'btn btn-mini' do %>
+                    <i class="icon-edit"></i> <%= t("helpers.links.edit") %>
+                <% end %>
+                <%= link_to receipt_path(receipt),
+                            :method => :delete,
+                            :data => {:confirm => t("helpers.links.confirm")},
+                            :class => 'btn btn-mini btn-danger' do %>
+                    <i class="icon-remove"></i> <%= t("helpers.links.destroy") %>
+                <% end %>
+              </div>
+            </td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

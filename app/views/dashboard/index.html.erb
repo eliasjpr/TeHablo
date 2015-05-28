@@ -1,0 +1,61 @@
+<div class="page-header">
+  <h1>
+    <i class="icon-dashboard"></i>
+    <%= t('dashboard.title') %>
+    <% if current_user.is_super_agent? || current_user.is_agent? %>
+    <span class="pull-right">
+      <div class="btn-group">
+        <%= link_to new_user_path, class: "btn btn-small btn-success" do %>
+            <i class="icon-user"></i> <%= t('btn.add_customer') %>
+        <% end %>
+      </div>
+    </span>
+    <% end %>
+  </h1>
+</div>
+
+<%= bootstrap_flash %>
+<div class="row-fluid">
+  <div class="span9">
+    <ul class="thumbnails">
+      <li class="span4">
+        <a href="#" class="thumbnail service">
+          <h1><i class="icon-mobile-phone icon-5x"></i> <br/>Top Up</h1>
+        </a>
+      </li>
+      <li class="span4">
+        <a href="#" class="thumbnail service">
+          <h1><i class="icon-file-alt icon-5x"></i> <br/>Bill Pay</h1>
+        </a>
+      </li>
+      <li class="span4">
+        <a href="#" class="thumbnail service">
+          <h1><i class="icon-phone icon-5x"></i> <br/>Calling</h1>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#active-calls" data-toggle="tab"><i class="icon-microphone"></i> <%= t('dashboard.active_calls') %></a>
+      </li>
+      <li><a href="#today-calls" data-toggle="tab"><i class="icon-phone"></i> <%= t('dashboard.todays_calls') %></a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="active-calls"><%= render "calls/call_table", calls: @active_calls %></div>
+      <div class="tab-pane" id="today-calls"><%= render "calls/call_table", calls: @today_calls %></div>
+    </div>
+
+    <div class="well well-small">
+      <%= render "layouts/service_text" %>
+    </div>
+
+  </div>
+  <div class="span3">
+    <%= render "quick_recharge" %>
+    <%= render "account_balance" %>
+  </div>
+</div>
+

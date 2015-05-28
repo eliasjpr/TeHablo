@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span6">
+      <%= image_tag @call.agent.logo.url(:medium), class: '' %>
+    </div>
+    <div class="span6 well well-small">
+
+
+      <table class="invoice-head">
+        <tbody>
+        <tr>
+          <td colspan="2"> <strong><%= @call.agent.business_name %></strong></td>
+        </tr>
+        <tr>
+          <td class="pull-right"><strong><%= t('calls.fields.user') %>-</strong></td>
+          <td> <%= @call.user.full_name %></td>
+        </tr>
+        <tr>
+          <td class="pull-right"><strong><%= t('calls.fields.invoice') %>-</strong></td>
+          <td> <%= "#{@call.id}-#{@call.created_at.strftime('%Y%m%d%H%m%s')}" %></td>
+        </tr>
+        <tr>
+          <td class="pull-right"><strong><%= t('calls.fields.date') %>-</strong></td>
+          <td> <%= @call.created_at.strftime('%m/%d/%y at %H:%m') %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <h2><%= t('calls.fields.invoice') %></h2>
+  <br>
+
+  <div class="row-fluid">
+    <div class="span12 well well-small invoice-body">
+      <table class="table table-striped" id="CompletedCalls">
+        <thead>
+        <tr>
+          <th class="blue header"><%= t('calls.fields.call_direction') %></th>
+          <th class="blue header"><%= t('calls.fields.from_number') %></th>
+          <th class="blue header"><%= t('calls.fields.to_number') %></th>
+          <th class="blue header"><%= t('calls.fields.billed_duration') %></th>
+          <th class="blue header"><%= t('calls.fields.total_amount') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><%= @call.call_direction.capitalize %></td>
+          <td><%= @call.from_number %></td>
+          <td><%= @call.to_number %></td>
+          <td><%= Time.at(@call.call_duration.to_i).utc.strftime("%H:%M:%S") %></td>
+          <td><%= number_to_currency(@call.get_call_cost, {unit: '$', precision: 2}) %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12 alert alert-block alert-success  invoice-thank">
+      <h4 style="text-align:center;"><strong><%= t('calls.fields.thank_you') %></strong></h4>
+    </div>
+  </div>
+  <%= render "layouts/service_text" %>
+</div>

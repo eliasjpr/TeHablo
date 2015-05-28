@@ -1,0 +1,12 @@
+<% if errors.any? %>
+    <div id="error_explanation" class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>
+      <strong><%= pluralize(errors.count, "error") %> prohibited this from being saved:</strong>
+
+      <ul>
+        <% errors.full_messages.each do |msg| %>
+            <li><i class="icon-warning-sign"></i> <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
