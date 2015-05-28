@@ -32,8 +32,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: heroku_892deb823e5f334
-  username: be37b139ac36a9
-  password: cd669d11
-  host: us-cdbr-east-03.cleardb.com
-  port: 3306
+  database: 
+  username: 
+  password: 
+  host: 
+  port: 
